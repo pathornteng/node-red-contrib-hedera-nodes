@@ -1,12 +1,23 @@
 # Project Summary
 
-A set of nodes used for interacting with Hedera Network.
+A set of node-red nodes used for interacting with Hedera Network.
+
+### Prerequisit
+
+```
+node
+node-red
+```
 
 ### Installation
 
 ```
-git clone https://github.com/pathornteng/node-red-contrib-hedera-nodes
 cd ~/.node-red
-npm install ./node-red-contrib-hedera-nodes // location of the newly cloned repo
-npm install @hashgraph/sdk
+git clone https://github.com/pathornteng/node-red-contrib-hedera-nodes
+cd node-red-contrib-hedera-nodes
+npm install
+
+cd ~/.node-red
+npm install ./node-red-contrib-hedera-nodes
+node-red
 ```
