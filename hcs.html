@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  RED.nodes.registerType("hedera-hcs-node", {
+    category: "function",
+    color: "#a6bbcf",
+    defaults: {
+      topicId: { value: "", required: true },
+      network: { value: "testnet", required: true },
+    },
+    credentials: {
+      accountId: { type: "text", required: true },
+      privateKey: { type: "password", required: true },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "hash.svg",
+    label: function () {
+      return this.name || "hedera-hcs-node";
+    },
+  });
+</script>
+
+<script type="text/html" data-template-name="hedera-hcs-node">
+  <div class="form-row">
+    <label for="node-input-accountId"
+      ><i class="fa fa-id-card"></i> AccountID</label
+    >
+    <input type="text" id="node-input-accountId" placeholder="AccountID" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-privateKey"
+      ><i class="fa fa-key"></i> PrivateKey</label
+    >
+    <input type="text" id="node-input-privateKey" placeholder="PrivateKey" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-topicId"
+      ><i class="fa fa-comment"></i> TopicID</label
+    >
+    <input type="text" id="node-input-topicId" placeholder="TopicID" />
+  </div>
+  <div class="form-row">
+    <label for="node-input-network"><i class="fa fa-globe"></i> Network</label>
+    <select id="node-input-network">
+      <option selected value="testnet">Testnet</option>
+      <option value="mainnet">Mainnet</option>
+    </select>
+  </div>
+</script>
+
+<script type="text/html" data-help-name="hcs-node">
+  <p>A hcs node sends message to a hcs topic</p>
+</script>
